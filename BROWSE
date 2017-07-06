@@ -1,0 +1,220 @@
+[ebrowse-hs "ebrowse 5.0" " -x" () ()][ebrowse-ts [ebrowse-cs "map" "my_std" 32"include/NProcess/thread_map.h" "  class map
+  {" 3692"include/NProcess/thread_map.h" ]
+()([ebrowse-ms "_M_t" () 0 () "    _Rep_type _M_t;" 5127 2  () () 0]
+)
+([ebrowse-ms "__glibcxx_class_requires" () 0 () "    __glibcxx_class_requires(_Tp" 4206 2  () "    __glibcxx_class_requires(_Tp" 4206]
+[ebrowse-ms "at" () 4 () "    at(const" 17122 0  () "    at(const" 17122]
+[ebrowse-ms "at" () 0 () "    at(const" 16890 0  () "    at(const" 16890]
+[ebrowse-ms "begin" () 4 () "    begin()" 11774 0  () "    begin()" 11774]
+[ebrowse-ms "begin" () 0 () "    begin()" 11529 0  () "    begin()" 11529]
+[ebrowse-ms "cbegin" () 4 () "    cbegin()" 13864 0  () "    cbegin()" 13864]
+[ebrowse-ms "cend" () 4 () "    cend()" 14119 0  () "    cend()" 14119]
+[ebrowse-ms "clear" () 0 () "    clear()" 23686 0  () "    clear()" 23686]
+[ebrowse-ms "count" () 4 () "    count(const" 26371 0  () "    count(const" 26371]
+[ebrowse-ms "crbegin" () 4 () "    crbegin()" 14386 0  () "    crbegin()" 14386]
+[ebrowse-ms "crend" () 4 () "    crend()" 14666 0  () "    crend()" 14666]
+[ebrowse-ms "empty" () 4 () "    empty()" 14839 0  () "    empty()" 14839]
+[ebrowse-ms "end" () 4 () "    end()" 12392 0  () "    end()" 12392]
+[ebrowse-ms "end" () 0 () "    end()" 12012 0  () "    end()" 12012]
+[ebrowse-ms "equal_range" () 4 () "    equal_range(const" 29833 0  () "    equal_range(const" 29833]
+[ebrowse-ms "equal_range" () 0 () "    equal_range(const" 29152 0  () "    equal_range(const" 29152]
+[ebrowse-ms "erase" () 0 () "    erase(iterator" 22476 0  () "    erase(iterator" 22476]
+[ebrowse-ms "erase" () 0 () "    erase(const" 21706 0  () "    erase(const" 21706]
+[ebrowse-ms "erase" () 0 () "    erase(iterator" 21040 0  () "    erase(iterator" 21040]
+[ebrowse-ms "find" () 4 () "    find(const" 25818 0  () "    find(const" 25818]
+[ebrowse-ms "find" () 0 () "    find(const" 25067 0  () "    find(const" 25067]
+[ebrowse-ms "get_allocator" () 4 () "    get_allocator()" 11270 0  () "    get_allocator()" 11270]
+[ebrowse-ms "insert" () 32 () "    insert(_InputIterator" 20372 0  () "    insert(_InputIterator" 20372]
+[ebrowse-ms "insert" () 0 () "    insert(iterator" 19740 0  () "    insert(iterator" 19740]
+[ebrowse-ms "insert" () 0 () "    insert(std" 18604 0  () "    insert(std" 18604]
+[ebrowse-ms "insert" () 0 () "    insert(const" 18075 0  () "    insert(const" 18075]
+[ebrowse-ms "key_comp" () 4 () "    key_comp()" 23962 0  () "    key_comp()" 23962]
+[ebrowse-ms "lower_bound" () 4 () "    lower_bound(const" 27808 0  () "    lower_bound(const" 27808]
+[ebrowse-ms "lower_bound" () 0 () "    lower_bound(const" 27154 0  () "    lower_bound(const" 27154]
+[ebrowse-ms "map" () 32 () "      :" 9063 0  () "      :" 9063]
+[ebrowse-ms "map" () 32 () "      :" 8412 0  () "      :" 8412]
+[ebrowse-ms "map" () 0 () "      :" 7756 0  () "      :" 7756]
+[ebrowse-ms "map" () 0 () "      :" 7213 0  () "      :" 7213]
+[ebrowse-ms "map" () 0 () "      :" 6822 0  () "      :" 6822]
+[ebrowse-ms "map" () 64 () "      :" 6447 0  () "      :" 6447]
+[ebrowse-ms "map" () 0 () "      :" 6207 0  () "      :" 6207]
+[ebrowse-ms "max_size" () 4 () "    max_size()" 15320 0  () "    max_size()" 15320]
+[ebrowse-ms "operator =" () 0 () "    operator=(initializer_list" 11057 0  () "    operator=(initializer_list" 11057]
+[ebrowse-ms "operator =" () 0 () "    operator=(map" 10468 0  () "    operator=(map" 10468]
+[ebrowse-ms "operator =" () 0 () "    operator=(const" 9992 0  () "    operator=(const" 9992]
+[ebrowse-ms "operator []" () 0 () "    operator[](const" 15950 0  () "    operator[](const" 15950]
+[ebrowse-ms "rbegin" () 4 () "    rbegin()" 13045 0  () "    rbegin()" 13045]
+[ebrowse-ms "rbegin" () 0 () "    rbegin()" 12782 0  () "    rbegin()" 12782]
+[ebrowse-ms "rend" () 4 () "    rend()" 13579 0  () "    rend()" 13579]
+[ebrowse-ms "rend" () 0 () "    rend()" 13308 0  () "    rend()" 13308]
+[ebrowse-ms "size" () 4 () "    size()" 15071 0  () "    size()" 15071]
+[ebrowse-ms "swap" () 0 () "    swap(map" 23214 0  () "    swap(map" 23214]
+[ebrowse-ms "upper_bound" () 4 () "    upper_bound(const" 28498 0  () "    upper_bound(const" 28498]
+[ebrowse-ms "upper_bound" () 0 () "    upper_bound(const" 28143 0  () "    upper_bound(const" 28143]
+[ebrowse-ms "value_comp" () 4 () "    value_comp()" 24318 0  () "    value_comp()" 24318]
+)
+()
+()
+([ebrowse-ms "operator <" () 32 () "    operator<(const" 30172 0  () () 0]
+[ebrowse-ms "operator ==" () 32 () "    operator==(const" 29999 0  () () 0]
+)
+([ebrowse-ms "_Alloc_value_type" () 0 () ":value_type                   _Alloc_value_type;" 4173 2  () () 0]
+[ebrowse-ms "_Pair_alloc_type" () 0 () "    _Pair_alloc_type;" 4944 2  () () 0]
+[ebrowse-ms "_Rep_type" () 0 () "		     key_compare, _Pair_alloc_type> _Rep_type;" 5071 2  () () 0]
+[ebrowse-ms "allocator_type" () 0 () "                                 allocator_type;" 4056 0  () () 0]
+[ebrowse-ms "const_iterator" () 0 () "Rep_type::const_iterator         const_iterator;" 5656 0  () () 0]
+[ebrowse-ms "const_pointer" () 0 () "_Pair_alloc_type::const_pointer   const_pointer;" 5382 0  () () 0]
+[ebrowse-ms "const_reference" () 0 () "air_alloc_type::const_reference const_reference;" 5520 0  () () 0]
+[ebrowse-ms "const_reverse_iterator" () 0 () "::const_reverse_iterator const_reverse_iterator;" 5946 0  () () 0]
+[ebrowse-ms "difference_type" () 0 () "ep_type::difference_type        difference_type;" 5794 0  () () 0]
+[ebrowse-ms "iterator" () 0 () "name _Rep_type::iterator               iterator;" 5585 0  () () 0]
+[ebrowse-ms "key_compare" () 0 () "                                    key_compare;" 3982 0  () () 0]
+[ebrowse-ms "key_type" () 0 () "                                       key_type;" 3770 0  () () 0]
+[ebrowse-ms "mapped_type" () 0 () "                                    mapped_type;" 3841 0  () () 0]
+[ebrowse-ms "pointer" () 0 () "ename _Pair_alloc_type::pointer         pointer;" 5312 0  () () 0]
+[ebrowse-ms "reference" () 0 () "ame _Pair_alloc_type::reference       reference;" 5448 0  () () 0]
+[ebrowse-ms "reverse_iterator" () 0 () "p_type::reverse_iterator       reverse_iterator;" 5867 0  () () 0]
+[ebrowse-ms "size_type" () 0 () "ame _Rep_type::size_type              size_type;" 5722 0  () () 0]
+[ebrowse-ms "value_type" () 0 () "<const _Key, _Tp>                    value_type;" 3911 0  () () 0]
+)
+()()
+][ebrowse-ts [ebrowse-cs "std" "my_std" 0() () 0() ]
+()()
+()
+()
+()
+()
+()
+()()
+][ebrowse-ts [ebrowse-cs "std" "nprocess" 0() () 0() ]
+()()
+()
+()
+()
+()
+()
+()()
+][ebrowse-ts [ebrowse-cs "NSingle" () 32"include/NSingle/NSingle.h" "class NSingle {" 200"include/NSingle/NSingle.h" ]
+()([ebrowse-ms "__debug" () 0 () "  bool __debug;" 943 1  () () 0]
+)
+([ebrowse-ms "Flush" () 9 () "  virtual void Flush ()" 329 1  () () 0]
+[ebrowse-ms "Init" () 9 () "  virtual void Init ()" 300 1  () () 0]
+[ebrowse-ms "NSingle" () 0 () "  NSingle (const NSingle&);" 971 2  () () 0]
+[ebrowse-ms "NSingle" () 0 () "  NSingle () {" 225 1  () "  NSingle () {" 225]
+[ebrowse-ms "SetDebug" () 0 () "  void SetDebug(bool" 365 0  () () 0]
+[ebrowse-ms "operator =" () 0 () "  NSingle& operator= (const" 1010 2  () () 0]
+[ebrowse-ms "~NSingle" () 1 () "  virtual ~NSingle ()" 272 1  () "  virtual ~NSingle ()" 272]
+)
+([ebrowse-ms "__sgt" () 32 () "  static T *__sgt;" 926 1  () "T *NSingle<T>::__sgt = NULL;" 1078]
+)
+([ebrowse-ms "GetIt" () 0 () "  static T *GetIt ()" 405 0  () "  static T *GetIt ()" 405]
+[ebrowse-ms "kill" () 0 () "  static void kill ()" 803 0  () "  static void kill ()" 803]
+)
+()
+()
+()()
+][ebrowse-ts [ebrowse-cs "NSingle" "nprocess" 32() () 0() ]
+([ebrowse-ts [ebrowse-cs "NProcess" "nprocess" 0"include/NProcess/NProcess.h" "  class NProcess :" 258"src/NProcess.cc" ]
+()([ebrowse-ms "__attr" () 0 () "    pthread_attr_t __attr;" 1890 2  () () 0]
+[ebrowse-ms "__count" () 0 () "    int __count;" 1669 2  () () 0]
+[ebrowse-ms "__count_threshold_cv" () 0 () "    pthread_cond_t __count_threshold_cv;" 1863 2  () () 0]
+[ebrowse-ms "__debug" () 0 () "    bool __debug;" 1687 2  () () 0]
+[ebrowse-ms "__init" () 0 () "    bool __init;" 1704 2  () () 0]
+[ebrowse-ms "__main_mutex" () 0 () "    pthread_mutex_t __main_mutex;" 1789 2  () () 0]
+[ebrowse-ms "__map_mutex" () 0 () "    pthread_mutex_t __map_mutex;" 1822 2  () () 0]
+[ebrowse-ms "__nb_running" () 0 () () 0 0  () "  int NProcess::__nb_running=0;" 5484]
+[ebrowse-ms "__nb_thread" () 0 () "    int __nb_thread;" 1725 2  () () 0]
+[ebrowse-ms "__obj_lst" () 0 () "    std::list<Object*> __obj_lst;" 1925 2  () () 0]
+[ebrowse-ms "__run_thread" () 0 () () 0 0  () "cess::Object*,pthread_t> NProcess::__run_thread;" 5452]
+[ebrowse-ms "__threads" () 0 () "    std::vector<pthread_t> __threads;" 2017 2  () () 0]
+)
+([ebrowse-ms "Add" () 0 () "    void Add(Object" 1500 2  () "  void NProcess::Add(Object" 1187]
+[ebrowse-ms "Delete" () 0 () "    void Delete(Object" 1526 2  () "  void NProcess::Delete(Object" 1417]
+[ebrowse-ms "Flush" () 0 () "    void Flush ()" 880 0  () "  void NProcess::Flush ()" 565]
+[ebrowse-ms "ForStep" () 0 () "    void ForStep (bool" 1199 0  () () 0]
+[ebrowse-ms "ForStep" () 0 () "    void ForStep (bool" 1131 0  () "  void NProcess::ForStep (bool" 4783]
+[ebrowse-ms "ForStep" () 0 () () 0 0  () "  void NProcess::ForStep (bool" 4597]
+[ebrowse-ms "GetNbProc" () 0 () "    int GetNbProc()" 959 0  () "  int NProcess::GetNbProc ()" 1129]
+[ebrowse-ms "GetNbRunning" () 0 () "    int GetNbRunning()" 983 0  "include/NProcess/NProcess.h" "    int GetNbRunning()" 983]
+[ebrowse-ms "GetObjects" () 0 () "    const std::list<Object*>& GetObjects()" 1430 0  "include/NProcess/NProcess.h" "    const std::list<Object*>& GetObjects()" 1430]
+[ebrowse-ms "Init" () 0 () "    void Init ()" 1479 2  () "  void NProcess::Init ()" 245]
+[ebrowse-ms "KillThis" () 0 () "    void KillThis (Object" 1384 0  () "  void NProcess::KillThis(Object" 2235]
+[ebrowse-ms "Lock" () 0 () "    void Lock(std" 1024 0  () "  void NProcess::Lock(string" 3322]
+[ebrowse-ms "NProcess" () 0 () "    NProcess();" 1622 2  () "  NProcess::NProcess () {" 167]
+[ebrowse-ms "ProcessAll" () 0 () "    void ProcessAll (unsigned" 1094 0  () "  void NProcess::ProcessAll (unsigned" 3966]
+[ebrowse-ms "ProcessThis" () 0 () () 0 0  () "  void* NProcess::ProcessThis(void" 1714]
+[ebrowse-ms "RunThis" () 0 () () 0 0  () "  void* NProcess::RunThis(void" 2969]
+[ebrowse-ms "RunThis" () 0 () "    void RunThis (Object" 1355 0  () "  void NProcess::RunThis(Object" 2572]
+[ebrowse-ms "SetDebug" () 0 () "    void SetDebug (bool" 905 0  () "  void NProcess::SetDebug (bool" 1644]
+[ebrowse-ms "SetNbProc" () 0 () "    void SetNbProc(int" 930 0  () "  void NProcess::SetNbProc (int" 1020]
+[ebrowse-ms "Unlock" () 0 () "    void Unlock(std" 1054 0  () "  void NProcess::Unlock (string" 3699]
+[ebrowse-ms "WaitRunning" () 0 () "    void WaitRunning (float" 1277 0  () "  void NProcess::WaitRunning (float" 4994]
+[ebrowse-ms "WaitThis" () 0 () "    void WaitThis (Object" 1313 0  () "  void NProcess::WaitThis (Object" 5176]
+[ebrowse-ms "~NProcess" () 0 () "    ~NProcess()" 1639 2  () "  NProcess::~NProcess ()" 199]
+)
+([ebrowse-ms "__nb_running" () 0 () "    static int __nb_running;" 1754 2  () () 0]
+[ebrowse-ms "__run_thread" () 0 () "tatic std::map <Object*,pthread_t> __run_thread;" 1979 2  () () 0]
+)
+([ebrowse-ms "ProcessThis" () 0 () "    static void* ProcessThis(void" 1563 2  () () 0]
+[ebrowse-ms "RunThis" () 0 () "    static void* RunThis(void" 1600 2  () () 0]
+)
+()
+()
+()()
+])()
+()
+()
+()
+()
+()
+()()
+][ebrowse-ts [ebrowse-cs "Object" "nprocess::NProcess" 0"include/NProcess/NProcess.h" "    class Object {" 361"src/NProcess.cc" ]
+()([ebrowse-ms "__process_id__" () 0 () () 0 0  () "unsigned int NProcess::Object::__process_id__=0;" 5393]
+[ebrowse-ms "__step__" () 0 () "      unsigned int __step__;" 844 2  () () 0]
+)
+([ebrowse-ms "GetProcessId" () 0 () "      unsigned int GetProcessId()" 534 0  "include/NProcess/NProcess.h" "      unsigned int GetProcessId()" 534]
+[ebrowse-ms "GetStep" () 0 () "      unsigned int GetStep()" 588 0  "include/NProcess/NProcess.h" "      unsigned int GetStep()" 588]
+[ebrowse-ms "Object" () 0 () "      Object (const Object&);" 449 0  () "  NProcess::Object::Object (const Object& obj_){" 5699]
+[ebrowse-ms "Object" () 0 () "      Object ();" 389 0  () "  NProcess::Object::Object (){" 5516]
+[ebrowse-ms "PostProcess" () 1 () "      virtual void PostProcess ()" 725 0  "include/NProcess/NProcess.h" "      virtual void PostProcess ()" 725]
+[ebrowse-ms "PreProcess" () 1 () "      virtual void PreProcess ()" 653 0  "include/NProcess/NProcess.h" "      virtual void PreProcess ()" 653]
+[ebrowse-ms "Process" () 9 () "      virtual void Process ()" 686 0  () () 0]
+[ebrowse-ms "Run" () 9 () "      virtual void Run ()" 754 0  () () 0]
+[ebrowse-ms "operator =" () 0 () "      Object& operator= (const" 490 0  () "cess::Object& NProcess::Object::operator= (const" 5817]
+[ebrowse-ms "~Object" () 1 () "      virtual ~Object ()" 415 0  () "  NProcess::Object::~Object ()" 5634]
+)
+([ebrowse-ms "__process_id__" () 0 () "      static unsigned int __process_id__;" 815 2  () () 0]
+)
+()
+()
+()
+()()
+][ebrowse-ts [ebrowse-cs "*Globals*" () 0() () 0"src/NProcess.cc" ]
+()([ebrowse-ms "_main_mutex" () 0 () () 0 0  "include/NProcess/thread_map.h" "  pthread_mutex_t _main_mutex;" 3489]
+[ebrowse-ms "_main_mutex2" () 0 () () 0 0  "include/NProcess/thread_map.h" "  pthread_mutex_t _main_mutex2;" 3521]
+[ebrowse-ms "std" () 0 () () 0 0  () "  using namespace std;" 142]
+)
+([ebrowse-ms "operator !=" () 34 "include/NProcess/thread_map.h" "operator!=(const" 31575 0  "include/NProcess/thread_map.h" "operator!=(const" 31575]
+[ebrowse-ms "operator <" () 34 "include/NProcess/thread_map.h" "operator<(const" 31328 0  "include/NProcess/thread_map.h" "operator<(const" 31328]
+[ebrowse-ms "operator <=" () 34 "include/NProcess/thread_map.h" "operator<=(const" 32051 0  "include/NProcess/thread_map.h" "operator<=(const" 32051]
+[ebrowse-ms "operator ==" () 34 "include/NProcess/thread_map.h" "operator==(const" 30720 0  "include/NProcess/thread_map.h" "operator==(const" 30720]
+[ebrowse-ms "operator >" () 34 "include/NProcess/thread_map.h" "operator>(const" 31815 0  "include/NProcess/thread_map.h" "operator>(const" 31815]
+[ebrowse-ms "operator >=" () 34 "include/NProcess/thread_map.h" "operator>=(const" 32291 0  "include/NProcess/thread_map.h" "operator>=(const" 32291]
+[ebrowse-ms "swap" () 34 "include/NProcess/thread_map.h" "swap(map" 32949 0  "include/NProcess/thread_map.h" "swap(map" 32949]
+[ebrowse-ms "swap" () 34 "include/NProcess/thread_map.h" "swap(map" 32754 0  "include/NProcess/thread_map.h" "swap(map" 32754]
+[ebrowse-ms "swap" () 34 "include/NProcess/thread_map.h" "swap(map" 32526 0  "include/NProcess/thread_map.h" "swap(map" 32526]
+)
+()
+()
+([ebrowse-ms "NALC_PROC" () 512 () () 0 0  "include/NProcess/NProcess.h" "#define NALC_PROC
+" 97]
+[ebrowse-ms "NALC_SINGLE" () 512 () () 0 0  "include/NSingle/NSingle.h" "#define NALC_SINGLE
+" 101]
+[ebrowse-ms "NPROCESS_LIB_VERSION" () 512 () () 0 0  "include/NProcess/NProcess_version.h" "#define NPROCESS_LIB_VERSION " 607]
+[ebrowse-ms "NPROCESS_VERSION" () 512 () () 0 0  "include/NProcess/NProcess_version.h" "#define NPROCESS_VERSION " 345]
+[ebrowse-ms "_MY_STL_MAP_H" () 512 () () 0 0  "include/NProcess/thread_map.h" "#define _MY_STL_MAP_H " 2414]
+[ebrowse-ms "__NProcess__NProcess_version_h" () 512 () () 0 0  "include/NProcess/NProcess_version.h" "#define __NProcess__NProcess_version_h " 153]
+)
+()
+()()
+]
