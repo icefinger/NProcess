@@ -66,7 +66,6 @@ namespace icedcode {
   private:
     void Init ();
     void Add(Object*);
-    void Delete(Object*);
     static void* ProcessThis(void* obj);
     static void* RunThis(void* obj);
     NProcess();
@@ -81,6 +80,9 @@ namespace icedcode {
 
     pthread_mutex_t __main_mutex;
     pthread_mutex_t __map_mutex;
+    pthread_mutex_t __count_mutex;
+    pthread_mutex_t __launcher_mutex;
+    pthread_mutex_t __join_mutex;
     pthread_cond_t __count_threshold_cv;
     pthread_attr_t __attr;
 

@@ -3,6 +3,7 @@
 #include <sys/sysinfo.h>
 #include <unistd.h>
 
+
 namespace icedcode {
 
   using namespace std;
@@ -11,7 +12,7 @@ namespace icedcode {
   }
 
   NProcess::~NProcess () {
-    Flush ();
+
   }
 
   void NProcess::Init () {
@@ -21,7 +22,10 @@ namespace icedcode {
     pthread_attr_setdetachstate(&__attr, PTHREAD_CREATE_JOINABLE);
     pthread_cond_init (&__count_threshold_cv, NULL);
     pthread_mutex_init(&__main_mutex, NULL);
+    pthread_mutex_init(&__count_mutex, NULL);
+    pthread_mutex_init(&__launcher_mutex, NULL);
     pthread_mutex_init(&__map_mutex, NULL);
+    pthread_mutex_init(&__join_mutex, NULL);
   }
 
   void NProcess::Flush () {
@@ -48,15 +52,8 @@ namespace icedcode {
     __obj_lst.push_back(obj_);
     __obj_lst.sort();
     __obj_lst.unique();
-    while (__obj_lst.size() > __threads.size())
+    while (__obj_lst.size() != __threads.size())
       __threads.push_back(a_thread);
-  }
-
-  void NProcess::Delete(Object* obj_){
-    list<Object*>::iterator pos=find (__obj_lst.begin(), __obj_lst.end(),obj_);
-    __obj_lst.erase(pos);
-    while (__obj_lst.size() < __threads.size())
-      __threads.pop_back();
   }
 
   void NProcess::SetDebug (bool debug_) {
@@ -65,20 +62,24 @@ namespace icedcode {
 
   void* NProcess::ProcessThis(void *obj_){
 
-    pthread_mutex_lock(&__sgt->__main_mutex);
+    pthread_mutex_trylock (&__sgt->__join_mutex);
+    pthread_mutex_lock(&__sgt->__count_mutex);
+    __sgt->__count++;
     if (__sgt->__count<__sgt->GetNbProc())
-      pthread_cond_signal(&__sgt->__count_threshold_cv);
-    pthread_mutex_unlock(&__sgt->__main_mutex);
+        pthread_mutex_unlock(&__sgt->__launcher_mutex);//pthread_cond_signal(&__sgt->__count_threshold_cv);
+
+    pthread_mutex_unlock(&__sgt->__count_mutex);
 
     ((NProcess::Object*)(obj_))->Process();
 
-    pthread_mutex_lock(&__sgt->__main_mutex);
+    pthread_mutex_lock(&__sgt->__count_mutex);
     __sgt->__count--;
     if (__sgt->__count<__sgt->GetNbProc())
-      pthread_cond_signal(&__sgt->__count_threshold_cv);
-    pthread_mutex_unlock(&__sgt->__main_mutex);
-
-    return NULL;
+        pthread_mutex_unlock(&__sgt->__launcher_mutex);//pthread_cond_signal(&__sgt->__count_threshold_cv);
+    if (__sgt->__count == 0)
+        pthread_mutex_unlock (&__sgt->__join_mutex);
+    pthread_mutex_unlock(&__sgt->__count_mutex);
+    pthread_exit(NULL);
   }
 
   void NProcess::KillThis(Object* obj_){
@@ -152,23 +153,14 @@ namespace icedcode {
 
       if (step_ != (*it)->GetStep()) continue;
 
-      pthread_mutex_lock(&__main_mutex);
-      __count++;
-      pthread_mutex_unlock(&__main_mutex);
-
+      pthread_mutex_lock(&__launcher_mutex);
       pthread_create(&__threads[i], &__attr, ProcessThis, (void*)(*it));
-      i++;
-
-      pthread_mutex_lock(&__main_mutex);
-      pthread_cond_wait(&__count_threshold_cv, &__main_mutex);
-      pthread_mutex_unlock(&__main_mutex);
     }
-
-    for (i=0; i<__threads.size(); i++) {
-      pthread_join(__threads[i], NULL);
-    }
-
+    pthread_mutex_lock (&__join_mutex);
+    pthread_mutex_unlock (&__join_mutex);
   }
+
+
 
   void NProcess::ForStep (bool &next_, unsigned int start_, unsigned stop_)
   {
@@ -217,7 +209,10 @@ namespace icedcode {
     __step__=0;
   }
   NProcess::Object::~Object (){
-    __sgt->Delete(this);
+    list<Object*>::iterator pos=find (__sgt->__obj_lst.begin(), __sgt->__obj_lst.end(),this);
+    __sgt->__obj_lst.erase(pos);
+    while (__sgt->__obj_lst.size() < __sgt->__threads.size())
+      __sgt->__threads.pop_back();
   }
 
   NProcess::Object::Object (const Object& obj_){
