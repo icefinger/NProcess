@@ -61,7 +61,8 @@ namespace icedcode {
     void WaitThis (Object*,float sec_=-1);
     void RunThis (Object*);
     void KillThis (Object*);
-    const std::list<Object*>& GetObjects() {return __obj_lst;}
+    const std::list<Object*>& GetObjects() const {return __obj_lst;}
+    size_t GetNbObject () const { return __obj_lst.size ();}
 
   private:
     void Init ();
