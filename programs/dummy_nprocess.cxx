@@ -41,12 +41,13 @@ public:
 
 int main()
 {
-
-  cout<<  "you have "<<icedcode::NProcess::GetIt()->GetNbProc()<<" processor."<<endl;
-  heritis h[100];
-  icedcode::NProcess::GetIt()->ProcessAll();
-  cout << "after processall" << endl;
-  for (size_t i=0; i<100; i++)
-    cout << h[i].a_result << endl;
+  {
+    cout<<  "you have "<<icedcode::NProcess::GetIt()->GetNbProc()<<" processor."<<endl;
+    heritis h[100];
+    icedcode::NProcess::GetIt()->ProcessAll();
+    cout << "after processall" << endl;
+    for (size_t i=0; i<100; i++)
+      cout << h[i].a_result << endl;
+  }
   return 0;
 }

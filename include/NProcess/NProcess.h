@@ -69,7 +69,7 @@ namespace icedcode {
     static void* ProcessThis(void* obj);
     static void* RunThis(void* obj);
     NProcess();
-    ~NProcess();
+    virtual ~NProcess();
 
   private:
     int __count;

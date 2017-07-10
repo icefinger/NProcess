@@ -12,7 +12,6 @@ namespace icedcode {
   }
 
   NProcess::~NProcess () {
-
   }
 
   void NProcess::Init () {
@@ -29,8 +28,15 @@ namespace icedcode {
   }
 
   void NProcess::Flush () {
-    for (list<Object*>::iterator it=__obj_lst.begin(); it!=__obj_lst.end();it++)
-      delete (*it);
+    cout << "destroying" << endl;
+    pthread_attr_destroy(&__attr);
+    pthread_cond_destroy(&__count_threshold_cv);
+    pthread_mutex_destroy(&__main_mutex);
+    pthread_mutex_destroy(&__count_mutex);
+    pthread_mutex_destroy(&__launcher_mutex);
+    pthread_mutex_destroy(&__map_mutex);
+    pthread_mutex_destroy(&__join_mutex);
+
     for(map<Object*,pthread_t>::iterator it=__run_thread.begin(); it!=__run_thread.end();it++)
       {
 	clog << "NProcess::Flush:WARNING: Running objects are about to be killed. Try to stop them before flushing or destroying NProcess.\n";
