@@ -11,7 +11,9 @@ Under GPL. See "COPYING.txt"
 #include <vector>
 #include <map>
 #include <string>
-#include <pthread.h>
+#include <thread>
+#include <atomic>
+#include <mutex>
 
 #include <NSingle.h>
 
@@ -32,7 +34,7 @@ namespace icedcode {
     public:
       Object (const Object&);
       Object& operator= (const Object&);
-      unsigned int GetProcessId() {return __process_id__;}
+      unsigned int GetProcessId() {return __current_process_id;}
       unsigned int GetStep() {return __step__;}
 
     public:
@@ -40,10 +42,13 @@ namespace icedcode {
       virtual void Process () = 0;
       virtual void PostProcess () {}
       virtual void Run () = 0;
+      void Lock (const std::string& key_) {__sgt->Lock (key_);}
+      void Unlock (const std::string& key_) {__sgt->Unlock (key_);}
 
     private:
-      static unsigned int __process_id__;
-      unsigned int __step__;
+      static std::atomic <size_t> __processes_id__;
+      size_t __current_process_id;
+      std::atomic <size_t> __step__;
     };
 
   public:
@@ -52,46 +57,43 @@ namespace icedcode {
     void SetNbProc(int nb_=-1);
     int GetNbProc();
     int GetNbRunning() {return __nb_running;}
-    void Lock(std::string);
-    void Unlock(std::string);
+    void PrepareLock(const std::string&);
+    void Lock(const std::string&);
+    void Unlock(const std::string&);
     void ProcessAll (unsigned int step_=0);
     void ForStep (bool &next_, std::list<unsigned int> step_list_);
     void ForStep (bool &next_, unsigned int start_, unsigned int stop_);
-    void WaitRunning (float sec_=-1);
-    void WaitThis (Object*,float sec_=-1);
-    void RunThis (Object*);
+    void WaitRunning ();
+    void WaitThis (Object*);
     void KillThis (Object*);
     const std::list<Object*>& GetObjects() const {return __obj_lst;}
     size_t GetNbObject () const { return __obj_lst.size ();}
 
+    static void ProcessThis(Object* obj_);
+    static void RunThis (Object* obj_);
+
   private:
+    //static void RunGarbageCollector (Object*);
+    void ProcessGarbageCollector ();
     void Init ();
     void Add(Object*);
-    static void* ProcessThis(void* obj);
-    static void* RunThis(void* obj);
     NProcess();
     virtual ~NProcess();
 
   private:
-    int __count;
+    std::atomic <int> __count;
     bool __debug;
     bool __init;
-    int __nb_thread;
-    static int __nb_running;
+    std::atomic <int> __nb_thread;
+    std::atomic<int> __nb_running;
 
-    pthread_mutex_t __main_mutex;
-    pthread_mutex_t __map_mutex;
-    pthread_mutex_t __count_mutex;
-    pthread_mutex_t __launcher_mutex;
-    pthread_mutex_t __join_mutex;
-    pthread_cond_t __count_threshold_cv;
-    pthread_attr_t __attr;
+    std::mutex __nb_thread_counter_mtx;
+    std::mutex __locker_mtx;
 
-    std::map<std::string, pthread_mutex_t> __mutex_lst;
-
+    std::map<std::string, std::mutex*> __mutex_lst;
     std::list<Object*> __obj_lst;
-    static std::map <Object*,pthread_t> __run_thread;
-    std::vector<pthread_t> __threads;
+    std::map <Object*,std::thread*> __run_thread;
+    std::list<std::thread*> __threads;
   };
 
 
