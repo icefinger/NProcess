@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+.././include/NProcess/NProcess.h
+list
+-
+vector
+-
+map
+-
+string
+-
+thread
+-
+atomic
+-
+mutex
+-
+NSingle.h
+-
+
+.././include/NSingle/NSingle.h
+typeinfo
+-
+iostream
+-
+cstring
+-
+
+/home/hugon/dev/NProcess/src/NProcess.cc
+NProcess.h
+-
+algorithm
+-
+sys/sysinfo.h
+-
+unistd.h
+-
+
