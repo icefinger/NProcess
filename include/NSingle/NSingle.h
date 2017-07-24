@@ -1,11 +1,16 @@
-/*
-  Hugon Christophe 2011.
-  Under GPL. See "COPYING.txt"
-*/
+/**
+ * @file   NSingle.h
+ * @author Christophe Hugon <hugon@cppm.in2p3.fr>
+ * @date   Mon Jul 24 17:04:17 2017
+ *
+ * @brief  Singleton generalistic class
+ *         Make easy to create singletons by inheritence
+ *
+ */
 
 
-#ifndef ICEDCODE_SINGLE
-#define ICEDCODE_SINGLE
+#ifndef __ICEDCODE_SINGLE_H__
+#define __ICEDCODE_SINGLE_H__
 
 #include <typeinfo>
 #include <iostream>
@@ -29,6 +34,12 @@ namespace icedcode
     void SetDebug(bool debug_);
 
   public:
+    /**
+     * Main end-user function.
+     * The singleton is used in such a way: ClassName::GetIt ()
+     * Take a look at the NProcess class as example to get how it works.
+     * @return Object static address
+     */
     static T *GetIt ()
     {
       if (NULL == __sgt)
@@ -51,6 +62,10 @@ namespace icedcode
       return (static_cast<T*> (__sgt));
     }
 
+    /**
+     * Remove the current singleton
+     * The next GetIt will return a new one, and this one will be deleted.
+     */
     static void kill ()
     {
       if (NULL != __sgt)

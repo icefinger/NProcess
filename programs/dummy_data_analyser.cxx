@@ -156,7 +156,7 @@ int main()
 
   int nb=0;
 
-  nproc->SetNbProc(1);
+  nproc->SetNbUsedProc(1);
 
   pthread_mutex_init(&a_thread[0], NULL);
   pthread_mutex_init(&a_thread[1], NULL);

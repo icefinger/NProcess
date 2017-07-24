@@ -31,7 +31,7 @@ namespace icedcode {
     __obj_lst.clear();
   }
 
-  void NProcess::SetNbProc (int nb_) {
+  void NProcess::SetNbUsedProc (int nb_) {
     if (nb_<=0) __nb_thread=get_nprocs ();
     else __nb_thread=nb_;
   }

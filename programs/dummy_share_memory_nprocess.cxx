@@ -47,7 +47,6 @@ private:
 int main()
 {
   cout<<  "you have "<<nproc->GetNbProc()<<" processor."<<endl;//nproc->SetNbProc(n) to set n threads.
-  nproc->SetNbProc(3);
   heritis h[1000];
   nproc->ProcessAll(); //short cut of NProcess::GetIt()->ProcessAll()
   return 0;
