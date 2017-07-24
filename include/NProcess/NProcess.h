@@ -57,7 +57,7 @@ namespace icedcode {
     void SetNbProc(int nb_=-1);
     int GetNbProc();
     int GetNbRunning() {return __nb_running;}
-    void PrepareLock(const std::string&);
+    std::mutex* PrepareMutex(const std::string&);
     void Lock(const std::string&);
     void Unlock(const std::string&);
     void ProcessAll (unsigned int step_=0);

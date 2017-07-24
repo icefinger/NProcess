@@ -76,6 +76,8 @@ namespace icedcode {
   }
 
   void NProcess::RunThis(Object* obj_){
+    for (auto it: __sgt->__run_thread)
+      cout<< it.first << " is running, ??? " << it.second << endl;
     if (__sgt->__run_thread.count(obj_)){
       clog << "WARNING: Object already running.\n";
       return;
@@ -85,30 +87,28 @@ namespace icedcode {
     __sgt->__run_thread[obj_]=new thread(RunThis, obj_);
   }
 
-  void NProcess::PrepareLock(const std::string& key_)
+  mutex* NProcess::PrepareMutex(const std::string& key_)
   {
+    mutex* to_return;
     __locker_mtx.lock ();
     if(!__mutex_lst.count(key_))
       {
-        __mutex_lst[key_]=new mutex;
-      }
+        to_return = new mutex;
+        __mutex_lst[key_]=to_return;
+      } else
+      to_return = __mutex_lst[key_];
     __locker_mtx.unlock ();
+    return to_return;
   }
 
   void NProcess::Lock(const string& key_){
-    PrepareLock (key_);
-    __mutex_lst[key_]->lock ();
+    mutex* tolock = PrepareMutex (key_);
+    tolock->lock ();
   }
 
   void NProcess::Unlock (const string& key_){
-    __locker_mtx.lock ();
-    if(!__mutex_lst.count(key_))
-      {
-        cerr << "NProcess::Unlock ERROR: " << key_ << " does not exist among mutexes, nothing unlock." << endl;
-        return;
-      }
-    __locker_mtx.unlock ();
-    __mutex_lst[key_]->unlock ();
+    mutex* tounlock = PrepareMutex (key_);
+    tounlock->unlock ();
   }
 
   void NProcess::ProcessAll (unsigned int step_){

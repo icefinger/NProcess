@@ -25,11 +25,9 @@ protected:
   void Process () {}
   void Run () {
     cout << name<<endl;cout.flush();sleep(1);
-    double a_result;
     for (int i=0;i<10;i++){
-      for (int j=0;j<100;j++)
-	a_result=sin(cos(tan(value)));
-      cout <<" sin(cos(tan("<< value <<")))="<<a_result<<" ";cout.flush();
+      cout << "running the loop " << i << endl;
+      usleep (1e7);
     }
   }
 
