@@ -143,8 +143,8 @@ namespace icedcode {
      * launch a thread for an object.
      * @param obj_ to be run.
      */
+    void AssynchRunThis (Object* obj_);
     static void RunThis (Object* obj_);
-
   private:
     //static void RunGarbageCollector (Object*);
     void ProcessGarbageCollector ();

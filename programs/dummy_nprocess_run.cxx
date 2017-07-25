@@ -26,8 +26,8 @@ protected:
   void Run () {
     cout << name<<endl;cout.flush();sleep(1);
     for (int i=0;i<10;i++){
-      cout << "running the loop " << i << endl;
-      usleep (1e7);
+      cout << name << ":running the loop " << i << endl;
+      sleep (5);
     }
   }
 
@@ -40,12 +40,12 @@ int main()
   heritis h[2];
   h[0].name="num1 ";
   h[1].name="num2 ";
-  icedcode::NProcess::GetIt()->RunThis(&h[0]);
-  sleep (1);
+  icedcode::NProcess::GetIt()->AssynchRunThis(&h[0]);
+  cout << "main: waiting some loops" << endl;
+  sleep (12);
+  cout << "main: killing it then launching another one and wait for it." << endl;
   icedcode::NProcess::GetIt()->KillThis (&h[0]);
-  //sleep (1);
-  cout << endl << endl;
-  //sleep (1);
+
   icedcode::NProcess::GetIt()->RunThis(&h[1]);
   icedcode::NProcess::GetIt()->WaitRunning();
   cout.flush();

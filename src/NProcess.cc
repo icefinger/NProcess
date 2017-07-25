@@ -70,12 +70,13 @@ namespace icedcode {
       clog << "WARNING: Object isn't running.\n";
       return;
     }
-
+    delete (__run_thread[obj_]);
     __run_thread.erase (obj_);
     __nb_running--;
   }
 
-  void NProcess::RunThis(Object* obj_){
+  void NProcess::AssynchRunThis(Object* obj_){
+    cout << "trying " << obj_ << endl;
     for (auto it: __sgt->__run_thread)
       cout<< it.first << " is running, ??? " << it.second << endl;
     if (__sgt->__run_thread.count(obj_)){
@@ -83,8 +84,12 @@ namespace icedcode {
       return;
     }
 
-    __sgt->__nb_running++;
     __sgt->__run_thread[obj_]=new thread(RunThis, obj_);
+  }
+
+  void NProcess::RunThis(Object* obj_){
+    __sgt->__nb_running++;
+    obj_->Run ();
   }
 
   mutex* NProcess::PrepareMutex(const std::string& key_)

@@ -13,6 +13,8 @@ The NProcess library does not have any dependencies, and use c++11 standards. So
     make
 
 ## Basic how to use
+The examples in programs shows how to basically use. dummy_nprocess is the basic multi-process use, dummy_nprocess_run is for assynchronous and dummy_locker and dummy_share_memory_nprocess are for built in lock mutexes. The dummy_data_analyser is to show how to use it for speeding up an analysis because you have to present some results and the calculus center is not available, the true origin of this library :D
+
 ### Parallel basic process
 First of all you have to inherit the class you want to be multithreaded:
 

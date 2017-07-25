@@ -29,15 +29,13 @@ protected:
     double a_result=0.;
     for (int i=0;i<1000000000;i++)
       for (int j=0;j<100000000;j++)//just to slow down :p
-      a_result=sin(cos(tan(result)));//value is only read by the threads, no need of Lock. a_result is a "local" temporary double.
-    pthread_mutex_lock (&__mutex);
-    //nproc->Lock("a_key");//result is under writting, so it should be locked with a "key"
+        Lock ("a lock name");//result is under writting/reading, so it should be locked with a "key"
+        a_result=sin(cos(tan(result)));
     cout <<"in the thread"<<' '<<a<<' '<<" result was "<<result<<" before.\n";cout.flush();
     a_result=pow(result,0.9)+a_result*a_result;
     result=a_result;
     cout <<"in this thread result is "<<result<<" after.\n\n";cout.flush();
-    //nproc->Unlock("a_key");//then unlocked with the same key, else all will be stuck after the first thread.
-    pthread_mutex_unlock (&__mutex);
+    Unlock ("a lock name");//then unlocked with the same key, else all will be stuck after the first thread.
   }
 private:
   int a;

@@ -77,6 +77,7 @@ cd build
 cmake ..
 make
 </pre><h2>Basic how to use</h2>
+<p>The examples in programs shows how to basically use. dummy_nprocess is the basic multi-process use, dummy_nprocess_run is for assynchronous and dummy_locker and dummy_share_memory_nprocess are for built in lock mutexes. The dummy_data_analyser is to show how to use it for speeding up an analysis because you have to present some results and the calculus center is not available, the true origin of this library :D</p>
 <h3>Parallel basic process</h3>
 <p>First of all you have to inherit the class you want to be multithreaded: </p><pre class="fragment">class heritis : public icedcode::NProcess::Object {
 public:
