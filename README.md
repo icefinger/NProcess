@@ -1,5 +1,5 @@
 # NProcess
-A pthread base multi-threading library
+A pthread base multi-threading library. Full documentation here: https://www.ge.infn.it/~chugon/NProcess/html/
 
 ## Principle
 The idea of this library is to use the polymorphism of the object oriented c++ to make it easier and more coherent (in big projects) way to do multi-threading. The object to be multi-threaded has to inherit from the NProcess::Object and will benefit of two virtual methods Process and Run. The process is used for series calculus, as many thread as object and can be launched more than once. The run is used for asynchronous processes.

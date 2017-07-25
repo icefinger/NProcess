@@ -68,18 +68,18 @@ $(function() {
 <div class="title">NProcess </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>A pthread base multi-threading library</p>
+<div class="textblock"><p>A pthread base multi-threading library. Full documentation here: <a href="https://www.ge.infn.it/~chugon/NProcess/html/">https://www.ge.infn.it/~chugon/NProcess/html/</a></p>
 <h2>Principle</h2>
-<p>The idea of this library is to use the polymorphism of the object oriented c++ to make it easier and more coherent way to do multi-threading. The object to be multi-threaded has to inherit from the NProcess::Object and will benefit of two virtual methods Process and Run. The process is used for series calculus, as many thread as object and can be launched more than once. The run is use for asynchronous processes.</p>
+<p>The idea of this library is to use the polymorphism of the object oriented c++ to make it easier and more coherent (in big projects) way to do multi-threading. The object to be multi-threaded has to inherit from the NProcess::Object and will benefit of two virtual methods Process and Run. The process is used for series calculus, as many thread as object and can be launched more than once. The run is used for asynchronous processes.</p>
 <h2>Compile</h2>
 <p>The NProcess library does not have any dependencies, and use c++11 standards. So just do: </p><pre class="fragment">mkdir build
 cd build
 cmake ..
 make
 </pre><h2>Basic how to use</h2>
-<p>The examples in programs shows how to basically use. dummy_nprocess is the basic multi-process use, dummy_nprocess_run is for assynchronous and dummy_locker and dummy_share_memory_nprocess are for built in lock mutexes. The dummy_data_analyser is to show how to use it for speeding up an analysis because you have to present some results and the calculus center is not available, the true origin of this library :D</p>
+<p>The examples in programs show how to basically use. dummy_nprocess is the basic multi-process use, dummy_nprocess_run is for asynchronous and dummy_locker and dummy_share_memory_nprocess are for built in lock mutexes. The dummy_data_analyser is to show how to use it for speeding up an analysis because you have to present some results and the calculus center is not available, the true origin of this library :D</p>
 <h3>Parallel basic process</h3>
-<p>First of all you have to inherit the class you want to be multithreaded: </p><pre class="fragment">class heritis : public icedcode::NProcess::Object {
+<p>First of all, you have to inherit the class you want to be multithreaded: </p><pre class="fragment">class heritis : public icedcode::NProcess::Object {
 public:
   heritis () {}
   ~heritis () {}
@@ -112,7 +112,7 @@ public:
   return 0;
 }
 </pre><h3>Assynchronous process</h3>
-<p>To use the assynchronous continuous process, just use the Run () method instead. See documentation for more details. </p>
+<p>To use the asynchronous continuous process, just use the Run () method instead. See documentation for more details. </p>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
