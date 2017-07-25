@@ -2,7 +2,7 @@
 A pthread base multi-threading library
 
 ## Principle
-The idea of this library is to use the polymorphism of the object oriented c++ to make it easier and more coherent way to do multi-threading. The object to be multi-threaded has to inherit from the NProcess::Object and will benefit of two virtual methods Process and Run. The process is used for series calculus, as many thread as object and can be launched more than once. The run is use for asynchronous processes.
+The idea of this library is to use the polymorphism of the object oriented c++ to make it easier and more coherent (in big projects) way to do multi-threading. The object to be multi-threaded has to inherit from the NProcess::Object and will benefit of two virtual methods Process and Run. The process is used for series calculus, as many thread as object and can be launched more than once. The run is used for asynchronous processes.
 
 ## Compile
 The NProcess library does not have any dependencies, and use c++11 standards. So just do:
@@ -13,10 +13,10 @@ The NProcess library does not have any dependencies, and use c++11 standards. So
     make
 
 ## Basic how to use
-The examples in programs shows how to basically use. dummy_nprocess is the basic multi-process use, dummy_nprocess_run is for assynchronous and dummy_locker and dummy_share_memory_nprocess are for built in lock mutexes. The dummy_data_analyser is to show how to use it for speeding up an analysis because you have to present some results and the calculus center is not available, the true origin of this library :D
+The examples in programs show how to basically use. dummy_nprocess is the basic multi-process use, dummy_nprocess_run is for asynchronous and dummy_locker and dummy_share_memory_nprocess are for built in lock mutexes. The dummy_data_analyser is to show how to use it for speeding up an analysis because you have to present some results and the calculus center is not available, the true origin of this library :D
 
 ### Parallel basic process
-First of all you have to inherit the class you want to be multithreaded:
+First of all, you have to inherit the class you want to be multithreaded:
 
     class heritis : public icedcode::NProcess::Object {
     public:
@@ -55,7 +55,7 @@ and then create as many processes as objects:
     }
 
 ### Assynchronous process
-To use the assynchronous continuous process, just use the Run () method instead. See documentation for more details.
+To use the asynchronous continuous process, just use the Run () method instead. See documentation for more details.
 
 
 
